@@ -1,0 +1,90 @@
+format = """
+$time\
+$username\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$container\
+$docker_context\
+$kubernetes\
+$python\
+$golang\
+$helm\
+$terraform\
+$fill\
+$aws\
+$gcloud\
+$cmd_duration\
+$character\
+"""
+
+add_newline = false
+
+[directory]
+style = 'bold #808080'
+truncation_length = 8
+truncation_symbol = '.../'
+
+[time]
+disabled = false
+time_format = '%R'
+format = '\[[$time]($style)\] '
+
+[character]
+format = """
+\n$symbol 
+"""
+success_symbol = '[❯](bold #7fc453)'
+error_symbol = '[✖](bold #db475f)'
+
+[username]
+show_always = true
+format = '[$user]($style) '
+
+[fill]
+symbol = '-'
+
+[aws]
+format = '[ $symbol ($profile)(\($region\))]($style)'
+style = 'bold #ff9900'
+symbol = ""
+force_display = true
+
+[gcloud]
+format = '[$symbol $account]($style) '
+style = 'bold #db4437'
+symbol = " 󱇶" 
+
+[golang]
+format = '[$symbol ($version )]($style)'
+symbol = ""
+
+[docker_context]
+format = '[ $symbol $context ](bold #0db7ed)'
+symbol = ""
+
+[python]
+format = '[ ${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )](bold #ffde57)'
+symbol = ""
+
+[terraform]
+format = '[ $symbol $workspace ]($style)'
+symbol = ""
+
+[git_commit]
+style = 'bold #f0efe7'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold #f0efe7'
+
+[git_state]
+style = 'bold #f0efe7'
+
+[git_status]
+style = 'bold #f0efe7'
+
+
